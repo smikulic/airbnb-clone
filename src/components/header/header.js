@@ -48,7 +48,7 @@ const NavStyl = styled.nav`
   display: flex;
   align-items: center;
   img {
-    width: 2rem;
+    width: 1.5rem;
     border-radius: 50%;
     border: 1px solid #b0b0b0;
   }
