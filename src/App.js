@@ -5,7 +5,6 @@ import Stays from './components/stays/stays'
 import { mockStays } from './mocks'
 import './App.css'
 
-
 function App() {
   return (
     <div className="App">

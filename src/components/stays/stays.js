@@ -6,7 +6,7 @@ const StaysStyl = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 1rem;
+  padding: 1rem 4rem;
 `
 const HeadlineStyl = styled.h2`
   margin: 0;

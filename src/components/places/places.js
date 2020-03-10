@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { ImageStyl } from '../../sharedStyled'
 
 const PlacesStyl = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ const PlaceStyl = styled.div`
   width: 20%;
   flex-direction: column;
   box-sizing: border-box;
-  @media (max-width: 1280px) {
+  @media (max-width: 1440px) {
     width: 25%;
   }
   @media (max-width: 1130px) {
@@ -25,14 +26,6 @@ const PlaceStyl = styled.div`
 `
 const PlaceInnerStyl = styled.div`
   padding: 0 0.5rem;
-`
-const ImageStyl = styled.div`
-  padding-top: 66.6667%;
-  width: 100%;
-  height: 100%;
-  background-image: url('${props => props.url}');
-  background-repeat: no-repeat;
-  background-size: cover;
 `
 const PlaceDetailsStyl = styled.div`
   display: flex;
@@ -46,6 +39,15 @@ const PlaceDetailsStyl = styled.div`
     vertical-align: 0;
     color: #FF385C; 
   }
+`
+const PlaceNameStyl = styled.div`
+  margin-bottom: 1rem;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  overflow: hidden;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `
 
 function Places({ places }) {
@@ -66,7 +68,9 @@ function Places({ places }) {
                   {place.rating}
                 </div>
               </PlaceDetailsStyl>
-              name
+              <PlaceNameStyl>
+                {place.name}
+              </PlaceNameStyl>
               {/* price
               total */}
             </PlaceInnerStyl>

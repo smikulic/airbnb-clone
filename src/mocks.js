@@ -4,7 +4,7 @@ export const mockStays = [
     details: 'Entire apartment',
     beds: '3',
     rating: '4.87',
-    name: 'Cozy studio just step outside City Square',
+    name: 'Cozy studio with balcony in Mitte',
     price: '$83',
   },
   {
