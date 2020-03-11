@@ -2,7 +2,6 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMountain, faSearch } from '@fortawesome/free-solid-svg-icons'
-import { ImageStyl } from '../../sharedStyled'
 import profileImg from '../../images/profile.jpg'
 
 const HeaderStyl = styled.header`
@@ -54,12 +53,23 @@ const NavStyl = styled.nav`
   }
 `
 
-function Header() {
+function Header({ setSearchTerm }) {
+
+  const handleKeyPress = (event) => {
+    if(event.key === 'Enter') {
+      setSearchTerm(event.target.value)
+    }
+  }
+
   return (
     <HeaderStyl>
       <FontAwesomeIcon icon={faMountain} />
       <FontAwesomeIcon icon={faSearch} />
-      <SearchInputStyl type="text" placeholder='Try “Berlin”' />
+      <SearchInputStyl
+        type="text"
+        placeholder='Try “Berlin”'
+        onKeyPress={handleKeyPress}
+      />
       <NavStyl>
         <img src={profileImg} alt="profile" />
       </NavStyl>

@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
 import Places from '../places/places'
 
 const StaysStyl = styled.div`
@@ -18,10 +20,27 @@ const SubHeadlineStyl = styled.h3`
   font-size: 1rem;
 `
 
-function Stays({ places }) {
-  const numberOfPlaces = places.length
+const READ_PLACES = gql`
+  query places($searchTerm: String) {
+    getPlaces(search: $searchTerm) {
+        places {
+            name
+            imageUrl
+        }
+        count
+    }
+  }
+`;
 
-  if (numberOfPlaces === 0) {
+function Stays({ searchTerm }) {
+  const { data, loading, error } = useQuery(READ_PLACES, {
+    variables: { searchTerm: searchTerm },
+  })
+
+  if (loading) {
+    return <StaysStyl><HeadlineStyl>loading...</HeadlineStyl></StaysStyl>
+  }
+  if (!data || data.getPlaces.places === 0) {
     return (
       <StaysStyl>
         <HeadlineStyl>Travel the world with us</HeadlineStyl>
@@ -30,6 +49,10 @@ function Stays({ places }) {
       </StaysStyl>
     )
   }
+  if (error) return <p>ERROR</p>
+
+  const places = data.getPlaces.places
+  const numberOfPlaces = places.length
 
   return (
     <StaysStyl>

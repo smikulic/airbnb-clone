@@ -2,7 +2,6 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { ImageStyl } from '../../sharedStyled'
 
 const PlacesStyl = styled.div`
   display: flex;
@@ -49,8 +48,17 @@ const PlaceNameStyl = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
 `
+export const ImageStyl = styled.div`
+  padding-top: 66.6667%;
+  width: 100%;
+  height: 100%;
+  background-image: url('${props => props.url}');
+  background-repeat: no-repeat;
+  background-size: cover;
+`
 
 function Places({ places }) {
+  console.log(places)
   return (
     <PlacesStyl>
       { places.map((place, placeKey) => {
