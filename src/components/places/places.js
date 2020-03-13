@@ -14,7 +14,7 @@ const PlaceStyl = styled.div`
   width: 20%;
   flex-direction: column;
   box-sizing: border-box;
-  @media (max-width: 1440px) {
+  @media (max-width: 1430px) {
     width: 25%;
   }
   @media (max-width: 1130px) {

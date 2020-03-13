@@ -9,7 +9,7 @@ const HeaderStyl = styled.header`
   justify-content: space-between;
   align-items: center;
   position: sticky;
-  padding: 0 2rem 0 4rem;
+  padding: 0 1rem 0 4rem;
   height: 80px;
   box-shadow: 0 1px 0 #EBEBEB;
   svg.fa-mountain {
@@ -46,10 +46,24 @@ const SearchInputStyl = styled.input`
 const NavStyl = styled.nav`
   display: flex;
   align-items: center;
+`
+const NavItem = styled.span`
+  padding: 1.5rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #484848;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
   img {
-    width: 1.5rem;
+    width: 1.3rem;
     border-radius: 50%;
     border: 1px solid #b0b0b0;
+  }
+  &:hover {
+    border-bottom: 2px solid rgb(118, 118, 118);
+  }
+  &:last-child {
+    border-bottom: 2px solid transparent;
   }
 `
 
@@ -71,7 +85,15 @@ function Header({ setSearchTerm }) {
         onKeyPress={handleKeyPress}
       />
       <NavStyl>
-        <img src={profileImg} alt="profile" />
+        <NavItem>Become a host</NavItem>
+        <NavItem>Saved</NavItem>
+        <NavItem>Trips</NavItem>
+        <NavItem>Messages</NavItem>
+        <NavItem>Company travel</NavItem>
+        <NavItem>Help</NavItem>
+        <NavItem>
+          <img src={profileImg} alt="profile" />
+        </NavItem>
       </NavStyl>
     </HeaderStyl>
   )
