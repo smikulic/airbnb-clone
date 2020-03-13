@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { pluralize } from '../../utility/pluralize'
 
 const PlacesStyl = styled.div`
   display: flex;
@@ -40,9 +41,9 @@ const PlaceDetailsStyl = styled.div`
   }
 `
 const PlaceNameStyl = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   height: 1.1rem;
-  line-height: 1.1rem;
+  line-height: 1.2rem;
   overflow: hidden;
   font-size: 0.8rem;
   white-space: nowrap;
@@ -52,6 +53,7 @@ export const ImageStyl = styled.div`
   padding-top: 66.6667%;
   width: 100%;
   height: 100%;
+  border-radius: 3px;
   background-image: url('${props => props.url}');
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,7 +71,7 @@ function Places({ places }) {
               <PlaceDetailsStyl>
                 <div>
                   <span>{place.details}</span> · 
-                  <span>{place.beds}</span> beds
+                  <span>{pluralize(place.beds, 'bed')}</span>
                 </div>
                 <div>
                   <FontAwesomeIcon icon={faStar} />

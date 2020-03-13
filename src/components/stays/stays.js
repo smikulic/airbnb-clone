@@ -25,6 +25,10 @@ const READ_PLACES = gql`
     getPlaces(search: $searchTerm) {
         places {
             name
+            beds
+            price
+            rating
+            details
             imageUrl
         }
         count
@@ -52,7 +56,7 @@ function Stays({ searchTerm }) {
   if (error) return <p>ERROR</p>
 
   const places = data.getPlaces.places
-  const numberOfPlaces = places.length
+  const numberOfPlaces = data.getPlaces.count
 
   return (
     <StaysStyl>
