@@ -5,9 +5,9 @@ import { StaysStyl, HeadlineStyl } from '../../sharedStyledComponents'
 import Places from '../places/places'
 
 const SubHeadlineStyl = styled.h3`
-  margin: 0;
+  margin: 0.2rem 0;
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 `
 const StatusStyl = styled.div`
   p {
@@ -32,7 +32,7 @@ const StatusStyl = styled.div`
 const WorldListStyl = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 1rem -0.5rem 2rem -0.5rem;
+  margin: 1rem -0.5rem 3rem -0.5rem;
 
   > div {
     display: flex;
@@ -40,6 +40,7 @@ const WorldListStyl = styled.div`
     overflow: hidden;
     margin: 0 0.5rem;
     height: 100%;
+    max-width: 220px;
     color: #222;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
     border-radius: 10px;

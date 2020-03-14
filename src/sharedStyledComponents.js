@@ -8,5 +8,6 @@ export const StaysStyl = styled.div`
 `
 export const HeadlineStyl = styled.h2`
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 `
