@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { pluralize } from '../../utility/pluralize'
+import { pluralize } from '../../utilities/pluralize'
 
 const PlacesStyl = styled.div`
   display: flex;
@@ -59,8 +59,10 @@ export const ImageStyl = styled.div`
   background-size: cover;
 `
 
-function Places({ places }) {
-  console.log(places)
+function Places({ places, limit = 0 }) {
+  console.log(places, limit)
+  places = limit > 0 ? places.slice(0, limit) : places
+
   return (
     <PlacesStyl>
       { places.map((place, placeKey) => {

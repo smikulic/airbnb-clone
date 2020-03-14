@@ -53,7 +53,7 @@ const NavItem = styled.span`
   font-weight: 600;
   color: #484848;
   border-bottom: 2px solid transparent;
-  cursor: pointer;
+  cursor: not-allowed;
   img {
     width: 1.3rem;
     border-radius: 50%;

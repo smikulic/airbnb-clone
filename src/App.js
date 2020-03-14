@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Header from './components/header/header'
 import Filters from './components/filters/filters'
-import Stays from './components/stays/stays'
+import StaysContainer from './containers/staysContainer'
 import './App.css'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
 
       <Header setSearchTerm={setSearchTerm} />
       <Filters />
-      <Stays searchTerm={searchTerm} />
+      <StaysContainer searchTerm={searchTerm} />
 
       {/* pagination */}
     </div>
