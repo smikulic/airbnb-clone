@@ -7,12 +7,20 @@ import './App.css'
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
 
+  console.log(searchTerm)
+
   return (
     <div className="App">
 
-      <Header setSearchTerm={setSearchTerm} />
+      <Header
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
       <Filters />
-      <StaysContainer searchTerm={searchTerm} />
+      <StaysContainer
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
 
       {/* pagination */}
     </div>

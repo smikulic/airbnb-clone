@@ -21,7 +21,7 @@ const READ_PLACES = gql`
   }
 `;
 
-function StaysContainer({ searchTerm }) {
+function StaysContainer({ searchTerm, setSearchTerm }) {
   const { data, loading, error } = useQuery(READ_PLACES, {
     variables: { searchTerm: searchTerm },
   })
@@ -45,6 +45,7 @@ function StaysContainer({ searchTerm }) {
       numberOfPlaces={numberOfPlaces}
       searchedCity={searchedCity}
       isSearched={isSearched}
+      setSearchTerm={setSearchTerm}
     />
   )
 }

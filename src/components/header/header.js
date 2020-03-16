@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMountain, faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -67,7 +67,12 @@ const NavItem = styled.span`
   }
 `
 
-function Header({ setSearchTerm }) {
+function Header({ searchTerm, setSearchTerm }) {
+  const [searchInputValue, setSearchInputValue] = useState(searchTerm)
+
+  useEffect(() => {
+    setSearchInputValue(searchTerm)
+  }, [searchTerm])
 
   const handleKeyPress = (event) => {
     if(event.key === 'Enter') {
@@ -82,7 +87,9 @@ function Header({ setSearchTerm }) {
       <SearchInputStyl
         type="text"
         placeholder='Try “Berlin”'
+        value={searchInputValue}
         onKeyPress={handleKeyPress}
+        onChange={(e) => setSearchInputValue(e.target.value)}
       />
       <NavStyl>
         <NavItem>Become a host</NavItem>
